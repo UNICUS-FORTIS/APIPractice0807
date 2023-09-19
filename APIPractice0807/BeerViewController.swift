@@ -7,10 +7,11 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 import Kingfisher
 
 class BeerViewController: UIViewController {
+    
+    let networkManager = APIService.shared
     
     let titleArray:[String] = [
         "이 어플 설치한순간 당신은 만취상태",
@@ -31,41 +32,40 @@ class BeerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+        fetch()
+    }
+    
+    func configureUI() {
         beerTitle.text = ""
         beerDescription.text = ""
         beerDescription.textAlignment = .left
         beerDescription.numberOfLines = 0
-        fetchRequest()
     }
     
-    
-    
-    func fetchRequest() {
-        let url = "https://api.punkapi.com/v2/beers/random"
-        // weeeeeeeek 쌜프
-        // 근데 포스트맨에서는 아까 갖고왔는데 왜 여기서는 아까 안됐나?
-        AF.request(url, method: .get).validate().responseJSON { [weak self] response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                // 이거 뎁스 하나 들어가있어서 0 넣으니까 됨 Fantastic.
-                self?.beerTitle.text = json[0]["name"].stringValue
-                self?.beerDescription.text = json[0]["description"].stringValue
-                guard let beerImage = json[0]["image_url"].string else { return }
-                let imageUrl = URL(string: beerImage)
-                self?.beerDisplay.kf.setImage(with: imageUrl)
-                
-                
-            case .failure(let error):
-                print(error)
+    func fetch() {
+        print(#function)
+        networkManager.fetchRequest(type: BeerReco.self, url: .randomBeer) { [weak self] result in
+            switch result {
+            case .success(let data):
+                print(data)
+                self?.beerTitle.text = data.name
+                self?.beerDescription.text = data.description
+                let imageUrl = data.imageURL
+                let url = URL(string: imageUrl)
+                DispatchQueue.main.async {
+                    self?.beerDisplay.kf.setImage(with: url)
+                }
+            case .failure(let failure):
+                print(failure)
             }
         }
     }
     
     
     
+    
     @IBAction func shuffleButtonTapped(_ sender: UIButton) {
-        fetchRequest()
         mainTitleLabel.text = titleArray.randomElement()!
     }
     

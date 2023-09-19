@@ -7,9 +7,7 @@
 
 import Foundation
 
-typealias Beer = [BeerReco]
-
-struct BeerReco: Codable {
+struct BeerReco: Decodable {
     let id: Int
     let name, description: String
     let imageURL: String

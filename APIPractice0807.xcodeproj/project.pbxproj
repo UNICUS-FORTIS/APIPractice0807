@@ -14,12 +14,11 @@
 		DE3B5D9D2A812DE400ED1539 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3B5D9C2A812DE400ED1539 /* Assets.xcassets */; };
 		DE3B5DA02A812DE400ED1539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3B5D9E2A812DE400ED1539 /* LaunchScreen.storyboard */; };
 		DE3B5DAE2A81335C00ED1539 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DE3B5DAD2A81335C00ED1539 /* Alamofire */; };
-		DE3B5DB12A81336900ED1539 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DE3B5DB02A81336900ED1539 /* SwiftyJSON */; };
-		DE3B5DB52A8135F600ED1539 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE3B5DB42A8135F600ED1539 /* .gitignore */; };
-		DE3B5DB72A81364900ED1539 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3B5DB62A81364900ED1539 /* APIKey.swift */; };
 		DE3B5DB92A81475C00ED1539 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3B5DB82A81475C00ED1539 /* BeerViewController.swift */; };
 		DE3B5DBC2A81535D00ED1539 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DE3B5DBB2A81535D00ED1539 /* Kingfisher */; };
 		DE3B5DBE2A8154DC00ED1539 /* BeerResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3B5DBD2A8154DC00ED1539 /* BeerResults.swift */; };
+		DEC72ED42AB9B3E90023DA69 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC72ED32AB9B3E90023DA69 /* APIService.swift */; };
+		DEC72ED62AB9B4070023DA69 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC72ED52AB9B4070023DA69 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +30,10 @@
 		DE3B5D9C2A812DE400ED1539 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE3B5D9F2A812DE400ED1539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE3B5DA12A812DE400ED1539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE3B5DB42A8135F600ED1539 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		DE3B5DB62A81364900ED1539 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		DE3B5DB82A81475C00ED1539 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		DE3B5DBD2A8154DC00ED1539 /* BeerResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerResults.swift; sourceTree = "<group>"; };
+		DEC72ED32AB9B3E90023DA69 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		DEC72ED52AB9B4070023DA69 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +42,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE3B5DBC2A81535D00ED1539 /* Kingfisher in Frameworks */,
-				DE3B5DB12A81336900ED1539 /* SwiftyJSON in Frameworks */,
 				DE3B5DAE2A81335C00ED1539 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,10 +68,8 @@
 		DE3B5D922A812DE400ED1539 /* APIPractice0807 */ = {
 			isa = PBXGroup;
 			children = (
-				DE3B5DB42A8135F600ED1539 /* .gitignore */,
-				DE3B5DB62A81364900ED1539 /* APIKey.swift */,
-				DE3B5D932A812DE400ED1539 /* AppDelegate.swift */,
-				DE3B5D952A812DE400ED1539 /* SceneDelegate.swift */,
+				DEC72ED22AB9B3C80023DA69 /* APIService */,
+				DEC72ED12AB9A53A0023DA69 /* App */,
 				DE3B5D992A812DE400ED1539 /* Main.storyboard */,
 				DE3B5DBD2A8154DC00ED1539 /* BeerResults.swift */,
 				DE3B5DB82A81475C00ED1539 /* BeerViewController.swift */,
@@ -83,6 +79,24 @@
 				DE3B5DA12A812DE400ED1539 /* Info.plist */,
 			);
 			path = APIPractice0807;
+			sourceTree = "<group>";
+		};
+		DEC72ED12AB9A53A0023DA69 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE3B5D932A812DE400ED1539 /* AppDelegate.swift */,
+				DE3B5D952A812DE400ED1539 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DEC72ED22AB9B3C80023DA69 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				DEC72ED32AB9B3E90023DA69 /* APIService.swift */,
+				DEC72ED52AB9B4070023DA69 /* Endpoint.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,7 +117,6 @@
 			name = APIPractice0807;
 			packageProductDependencies = (
 				DE3B5DAD2A81335C00ED1539 /* Alamofire */,
-				DE3B5DB02A81336900ED1539 /* SwiftyJSON */,
 				DE3B5DBB2A81535D00ED1539 /* Kingfisher */,
 			);
 			productName = APIPractice0807;
@@ -136,7 +149,6 @@
 			mainGroup = DE3B5D872A812DE400ED1539;
 			packageReferences = (
 				DE3B5DAC2A81335C00ED1539 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				DE3B5DAF2A81336900ED1539 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				DE3B5DBA2A81535D00ED1539 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DE3B5D912A812DE400ED1539 /* Products */;
@@ -153,7 +165,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE3B5DB52A8135F600ED1539 /* .gitignore in Resources */,
 				DE3B5DA02A812DE400ED1539 /* LaunchScreen.storyboard in Resources */,
 				DE3B5D9D2A812DE400ED1539 /* Assets.xcassets in Resources */,
 				DE3B5D9B2A812DE400ED1539 /* Main.storyboard in Resources */,
@@ -167,12 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC72ED62AB9B4070023DA69 /* Endpoint.swift in Sources */,
 				DE3B5DB92A81475C00ED1539 /* BeerViewController.swift in Sources */,
 				DE3B5D982A812DE400ED1539 /* ViewController.swift in Sources */,
 				DE3B5D942A812DE400ED1539 /* AppDelegate.swift in Sources */,
 				DE3B5D962A812DE400ED1539 /* SceneDelegate.swift in Sources */,
+				DEC72ED42AB9B3E90023DA69 /* APIService.swift in Sources */,
 				DE3B5DBE2A8154DC00ED1539 /* BeerResults.swift in Sources */,
-				DE3B5DB72A81364900ED1539 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,14 +418,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		DE3B5DAF2A81336900ED1539 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		DE3B5DBA2A81535D00ED1539 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -429,11 +433,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE3B5DAC2A81335C00ED1539 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		DE3B5DB02A81336900ED1539 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE3B5DAF2A81336900ED1539 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
 		};
 		DE3B5DBB2A81535D00ED1539 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
