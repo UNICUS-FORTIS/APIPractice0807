@@ -28,7 +28,6 @@ enum NetworkError: Int, Error {
     }
 }
 
-
 class APIService {
     
     static let shared = APIService()
@@ -37,13 +36,10 @@ class APIService {
     typealias Network<T> = (Result<T,NetworkError>) -> Void
     
     func fetchRequest<T: Decodable> (type:T.Type,
-                                     url: EndPoint,
+                                     api: Router,
                                      completion: @escaping Network<T>) {
         
-        guard let endUrl = url.endPoint else { return }
-        print(endUrl)
-        AF.request(endUrl, method: .get).responseDecodable(of: T.self) { response in
-            print(response.result)
+        AF.request(api).responseDecodable(of: T.self) { response in
             switch response.result {
             case.success(let data): completion(.success(data))
                 
@@ -54,5 +50,4 @@ class APIService {
             }
         }
     }
-    
 }

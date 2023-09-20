@@ -7,7 +7,11 @@
 
 import Foundation
 
+
 struct BeerReco: Decodable {
+    
+    typealias Beer = [BeerReco]
+
     let id: Int
     let name, description: String
     let imageURL: String
